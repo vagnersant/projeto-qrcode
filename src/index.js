@@ -5,6 +5,7 @@ import promptSchemaMain from "./prompts-schema/prompt-schema-main.js";
 import createQRCode from "./services/qr-code/create.js";
 import createPassword from "./services/password/create.js";
 import createHash from "./services/hash/create.js";
+import createShortURL from "./services/shortenerURL/createShortURL.js";
 
 async function main() {
   prompt.get(promptSchemaMain, async (err, choose) => {
@@ -13,6 +14,7 @@ async function main() {
     if (choose.select == 1) await createQRCode();
     if (choose.select == 2) await createPassword();
     if (choose.select == 3) await createHash();
+    if (choose.select == 4) await createShortURL();
   });
 
   prompt.start();
